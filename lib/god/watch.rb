@@ -6,7 +6,7 @@ module God
   # workflows. It has four states: init, up, start, and restart.
   class Watch < Task
     # The Array of Symbol valid task states.
-    VALID_STATES = [:init, :up, :start, :restart]
+    VALID_STATES = [:init, :up, :start, :restart, :reload]
 
     # The Sybmol initial state.
     INITIAL_STATE = :init

@@ -468,6 +468,8 @@ module God
         items.each { |w| jobs << Thread.new { w.monitor if w.state != :up } }
       when "restart"
         items.each { |w| jobs << Thread.new { w.move(:restart) } }
+      when "reload"
+        items.each { |w| jobs << Thread.new { w.move(:reload) } }
       when "stop"
         items.each { |w| jobs << Thread.new { w.action(:stop); w.unmonitor if w.state != :unmonitored } }
       when "unmonitor"
