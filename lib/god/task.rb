@@ -246,8 +246,8 @@ module God
     # condition - The Condition.
     #
     # Returns nothing.
-    def trigger(condition)
-      self.driver.message(:handle_event, [condition])
+    def trigger(condition, at=0)
+      self.driver.message(:handle_event, [condition], at)
     end
 
     def signal(sig)

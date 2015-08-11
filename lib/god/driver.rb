@@ -73,8 +73,8 @@ module God
     # task - The Task upon which to operate.
     # name - The Symbol name of the method to call.
     # args - The Array of arguments to send to the method.
-    def initialize(task, name, args)
-      super(0)
+    def initialize(task, name, args, at=0)
+      super(at)
       @task = task
       @name = name
       @args = args
@@ -218,8 +218,8 @@ module God
     # args - An optional Array of arguments.
     #
     # Returns nothing.
-    def message(name, args = [])
-      @events.push(DriverOperation.new(@task, name, args))
+    def message(name, args = [], at=0)
+      @events.push(DriverOperation.new(@task, name, args, at))
     end
 
     # Create and schedule a new DriverEvent.

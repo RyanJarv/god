@@ -80,8 +80,8 @@ module God
       raise AbstractMethodNotOverriddenError.new("TriggerCondition#process must be overridden in subclasses")
     end
 
-    def trigger
-      self.watch.trigger(self)
+    def trigger(at=0)
+      self.watch.trigger(self, at)
     end
 
     def register

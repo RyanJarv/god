@@ -71,7 +71,8 @@ module God
 
               if concensus && duration
                 @timeline.clear
-                trigger
+                #Set run time to 10 seconds ago due to an apparent race condition in god, https://github.com/mojombo/god/issues/193
+                trigger(-10)
                 retry_mechanism
               end
             end
